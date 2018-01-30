@@ -13,6 +13,7 @@ password: 1234
 becarryfull about the action websites has a your ip' address in databases.
 pls give me advice about this work , what can i do. i will adding to users profile soon.
 
+dont forget to install database 'eticaret.sql'
 ###################
 What is CodeIgniter
 ###################
