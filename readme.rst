@@ -1,3 +1,18 @@
+
+
+
+#################
+What is e-ticaret_example
+#################
+
+this code example or code work about to E-Commerce. you can view in there www.oguzkumcular.com
+also you can view to user interface with login 
+E-mail: cevdet@gmail.com 
+password: 1234
+
+becarryfull about the action websites has a your ip' address in databases.
+pls give me advice about this work , what can i do. i will adding to users profile soon.
+
 ###################
 What is CodeIgniter
 ###################
