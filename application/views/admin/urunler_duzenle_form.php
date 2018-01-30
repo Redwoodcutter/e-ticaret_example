@@ -1,6 +1,6 @@
 <?php
-$this->load->view('admin\_header');
-$this->load->view('admin\_sidebar');
+$this->load->view('admin/_header');
+$this->load->view('admin/_sidebar');
 ?>
 
 <div id="page-wrapper">
@@ -8,63 +8,66 @@ $this->load->view('admin\_sidebar');
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Urun Duzenleme</h1>
-                        <form action="<?=base_url()?>admin/urunler/guncelle/<?=$veri[0]->Id?>" method="POST" >
+                        <form action="<?=base_url()?>Admin/Urunler/guncelle/<?=$veri[0]->Id?>" method="POST" >
+                                 
                             <div class="form-group">
                             <label for="exampleInputEmail1">Ad</label>
-                            <input type="text" class="form-control" id="Ad"required name="Ad"  value="<?=$veri[0]->Ad?>">
+                            <input type="text" class="form-control" id="email"required name="Ad" aria-describedby="emailHelp" value="<?=$veri[0]->Ad?>" >
                           </div>
                           <div class="form-group">
-                            <label for="exampleInputPassword1">Kodu</label>
-                            <input type="text" class="form-control" id="sifre" required name="Kodu" placeholder="Password" value="<?=$veri[0]->Kodu?>">
-                          </div>
-                            <div class="form-group">
-                            <label for="exampleInputEmail1">Turu</label>
-                            <input type="adsoy" class="form-control" id="adsoy" required name="Turu" value="<?=$veri[0]->Turu?>">
-                          </div>
+                            <label for="exampleInputPassword1">Grubu</label>
+                             <select class="form-control" id="sifre" required name="Grubu" >
+                                    <option>indirim</option>
+                                    <option>kampanya</option>
+                                    <option>Yeni</option>
+                                </select> </div>
                           <div class="form-group">
-                            <label for="exampleInputPassword1">Kategori</label>
-                            <input type="text" class="form-control" id="durum" required name="Kategori" value="<?=$veri[0]->Kategori?>" >
-                          </div>
-                             <div class="form-group">
-                            <label for="exampleInputPassword1">Stok</label>
-                            <input type="text" class="form-control" id="durum" required name="Stok" value="<?=$veri[0]->Stok?>" >
-                          </div>
-                             <div class="form-group">
-                            <label for="exampleInputPassword1">Durum</label>
-                            <input type="text" class="form-control" id="durum" required name="Durum" value="<?=$veri[0]->Durum?>" >
+                            <label id="kategori">kategori</label>
+                           <select class="form-control" name="Kategori">
+                            <option value="<?=$veri[0]->Kategori?>"><?=$veri[0]->Katadi?></option>
+                            <?php   foreach($veriler as $rs){ ?>
+                            <option value="<?=$rs->Id?>"><?=$rs->Adi?></option>
+                            <?php } ?>
+                             </select>
                           </div>
                             <div class="form-group">
-                            <label for="exampleInputEmail1">Tarih</label>
-                            <input type="text" class="form-control" id="yetki"  name="Tarih" value="<?=$veri[0]->Tarih?>" >
+                            <label for="exampleInputEmail1">Fiyat</label>
+                            <input type="adsoy" class="form-control" id="adsoy"  name="Turu" value="<?=$veri[0]->Fiyat?>">
                           </div>
                             <div class="form-group">
-                            <label for="exampleInputEmail1">Resim</label>
-                            <input type="text" class="form-control" id="yetki"  name="Resim" value="<?=$veri[0]->Resim?>" >
+                            <label for="exampleInputEmail1">Stok</label>
+                            <input type="text" class="form-control" id="yetki"  name="Stok" value="<?=$veri[0]->Stok?>" >
+                          </div>
+                            <div class="form-group " >
+                                <label for="inputEmail3" class="control-label" >Ürün Özellikleri</label><br>
+                                <textarea name="Aciklama"><?=$veri[0]->Aciklama?></textarea>
+                             <div>
+                            <div class="form-group">
+                            <label for="exampleInputEmail1">Description</label>
+                            <input type="text" class="form-control" id="yetki"  name="Description" value="<?=$veri[0]->Description?>" >
                           </div>
                              <div class="form-group">
-                            <label for="exampleInputPassword1">Description</label>
-                            <input type="text" class="form-control" id="durum"  name="Description" value="<?=$veri[0]->Description?>" >
-                          </div>
-                            <div class="form-group">
                             <label for="exampleInputEmail1">Keywords</label>
                             <input type="text" class="form-control" id="yetki"  name="Keywords" value="<?=$veri[0]->Keywords?>" >
                           </div>
                           <button type="submit" class="btn btn-primary">Kaydı Güncelle</button>
                         </form>
-                    <!-- /.col-lg-12 -->
+                         
+                       
+                    <!--/.col-lg-12 -->
                 </div>
-                <!-- /.row -->
+                <!--/.row -->
             </div>
-            <!-- /.container-fluid -->
+            <!--/.container-fluid -->
         </div>
 </div>
 <?php
-$this->load->view('admin\_footer');
-?><?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+$this->load->view('admin/_footer');
+?>
+<script src="<?=base_url()?>assets/admin/ckeditor/ckeditor.js"></script>
+<script>
+    $(function(){
+        CKEDITOR.replace('Aciklama')
+    $('.textarea').wvysihtml5()
+    })
+    </script>

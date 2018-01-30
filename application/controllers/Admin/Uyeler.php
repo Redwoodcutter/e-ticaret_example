@@ -9,7 +9,7 @@ class Uyeler extends CI_Controller {
 				parent :: __construct();
 				$this->load->helper('url');
                                 if(!$this->session->userdata("admin_session")){   //login olup olmadıgı kontrolu..burada admin session a array ı atayıp kontrol yaptık..
-                                redirect(base_url().'admin/login');
+                                redirect(base_url().'Admin/Login');
                                 }
 	}
 	
@@ -17,13 +17,13 @@ class Uyeler extends CI_Controller {
 	{
 		$query=$this->db->query("SELECT * FROM users ORDER BY id");
                 $data["veriler"]=$query->result();
-		$this->load->view('admin\uyeler_liste',$data);
+		$this->load->view('admin/uyeler_liste',$data);
 		
 		
 	}
         public function ekle()
 	{
-            $this->load->view('admin\uye_ekle');
+            $this->load->view('admin/uye_ekle');
 		
 		
 	}
@@ -38,7 +38,7 @@ class Uyeler extends CI_Controller {
          );
          $this->db->insert("users",$data);
          $this->session->set_flashdata("mesaj","Üye Ekleme Başariyla Gerçekleştirildi..");
-         redirect(base_url().'admin/uyeler');
+         redirect(base_url().'Admin/Uyeler');
 		
 	}
         
@@ -46,7 +46,7 @@ class Uyeler extends CI_Controller {
 	{
 		$query=$this->db->query("SELECT * FROM users WHERE id=$id");
                 $data["veri"]=$query->result();
-		$this->load->view('admin\uye_duzenle_form',$data);
+		$this->load->view('admin/uye_duzenle_form',$data);
 		
 	}
          public function guncelle($id)
@@ -62,13 +62,13 @@ class Uyeler extends CI_Controller {
          $this->Database_Model->update_data("users",$data,$id);
          
          $this->session->set_flashdata("mesaj","Başariyla Güncellendi");
-         redirect(base_url().'admin\uyeler');
+         redirect(base_url().'Admin/Uyeler');
 		
 	}
 	public function uye_sil($id)
 	{
 		$this->db->query("DELETE FROM users WHERE id=$id");
-                redirect(base_url().'admin/uyeler');
+                redirect(base_url().'Admin/Uyeler');
 		
 		
 	}

@@ -1,6 +1,6 @@
 <?php
-$this->load->view('admin\_header');
-$this->load->view('admin\_sidebar');
+$this->load->view('admin/_header');
+$this->load->view('admin/_sidebar');
 ?>
 
 <div id="page-wrapper">
@@ -22,9 +22,9 @@ $this->load->view('admin\_sidebar');
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a href="<?=base_url()?>admin/uyeler/ekle" type="button" class="btn btn-primary"><i class="fa fa-plus-circle fa-fw"></i>Uye Ekle</a>
+                            <a href="<?=base_url()?>Admin/Uyeler/ekle" type="button" class="btn btn-primary"><i class="fa fa-plus-circle fa-fw"></i>Uye Ekle</a>
                         </div>
-                        <!-- /.panel-heading -->
+                        <!--/.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped">
@@ -49,28 +49,28 @@ $this->load->view('admin\_sidebar');
                                              <td><?=$rs->email?></td>
                                             <td><?=$rs->yetki?></td>
                                             <td><?=$rs->durum?></td>
-                                            <td><a href="<?=base_url() ?>admin/uyeler/uye_duzenle/<?=$rs->id?>">düzenle</a></td>
-                                            <td><a href="<?=base_url() ?>admin/uyeler/uye_sil/<?=$rs->id?>" onclick="return confirm('Üye Silinecek Emin Misin?')" >sil</a></td>
+                                            <td><a href="<?=base_url() ?>Admin/Uyeler/uye_duzenle/<?=$rs->id?>"  class="btn btn-warning">düzenle</a></td>
+                                            <td><a href="<?=base_url() ?>Admin/Uyeler/uye_sil/<?=$rs->id?>" onclick="return confirm('Üye Silinecek Emin Misin?')" class="btn btn-danger" >sil</a></td>
                                         </tr>
                                        
                                       <?php }?>
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- /.table-responsive -->
+                            <!--/.table-responsive -->
                         </div>
-                        <!-- /.panel-body -->
+                        <!--/.panel-body -->
                     </div>
-                    <!-- /.panel -->
+                    <!--/.panel -->
                 </div>
                         
                     </div>
-                    <!-- /.col-lg-12 -->
+                    <!--/.col-lg-12 -->
                 </div>
-                <!-- /.row -->
+                <!--/.row -->
             </div>
-            <!-- /.container-fluid -->
+            <!--/.container-fluid -->
         </div>
     <?php
-$this->load->view('admin\_footer');
+$this->load->view('admin/_footer');
 ?>

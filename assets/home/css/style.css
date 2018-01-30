@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21.Mar.2015, 18:18:29
+    Author     : Red
+*/
+body{background: url(../İmage/Tema/images.jpg) top left repeat}
+.margintop10 {margin-top: 10px!important;}
+#Navbar-Cour
+{
+    margin-bottom:0!important;
+}
+
+.hakkımızda-menu li a
+{
+    color:#adadad!important;
+}
+.hakkımızda-menu li a:hover
+{
+   color: #c12e2a!important;
+   
+}
+/*anasayfa makale listeleme bölümü*/
+.tab-content div {border: 1px solid #0000; background: #0000!important; padding: 10px;}
+.tab-content div:hover {background: #0000!important;}
+.tab-content div h3 {margin-top: 5px!important;}
+.fadeozerk {font-size: 13px; color: #636363;}
+.fadeozerk a {font-size: 14px; color: orangered; font-weight: bold;}
+.fadeozerk1 {background: none; margin: 4px 5px 3px 0; padding: 0;}
+.logoRes {margin: 3px 3px 3px 3px;}

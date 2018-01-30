@@ -33,10 +33,26 @@ class Database_model extends CI_Model {
                 return true;
             }
            function get_urunler(){
-                        $query=$this->db->query('SELECT urunler.*, kategoriler.adi as Katadi
+                        $query=$this->db->query('SELECT urunler.*, kategoriler.Adi as Katadi
                         FROM urunler 
-                        INNER JOIN kategoriler ON urunler.kategori=kategoriler.id
+                        INNER JOIN kategoriler ON urunler.Kategori=kategoriler.Id
                         order by Id');
+                        
+                        return $query->result();
+            }
+             function get_urun($id){
+                        $query=$this->db->query('SELECT urunler.*, kategoriler.Adi as Katadi
+                        FROM urunler 
+                        INNER JOIN kategoriler ON urunler.Kategori=kategoriler.Id
+                        WHERE urunler.Id='.$id);
+                        
+                        return $query->result();
+            }
+             function sepet_urunler($id){
+                        $query=$this->db->query('SELECT sepet.*,urunler.Resim as urunresim, urunler.Ad as urunadi,fiyat as satfiyat
+                        FROM sepet
+                        LEFT JOIN urunler ON urunler.Id=sepet.Urun_id
+                        WHERE sepet.Musteri_id='.$id);
                         
                         return $query->result();
             }

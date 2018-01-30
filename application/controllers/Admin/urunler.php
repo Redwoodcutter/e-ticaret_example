@@ -10,7 +10,7 @@ class Urunler extends CI_Controller {
                                 $this->load->model('Database_Model');
 				$this->load->helper('url');
                                 if(!$this->session->userdata("admin_session")){   //login olup olmadıgı kontrolu..burada admin session a array ı atayıp kontrol yaptık..
-                                redirect(base_url().'admin/login');
+                                redirect(base_url().'Admin/Login');
                                 }
 	}
 	
@@ -20,52 +20,53 @@ class Urunler extends CI_Controller {
             //$data["veriler"]=$query->result();
             $data["veriler"]=$this->Database_Model->get_urunler();
             
-            $this->load->view('admin\urunler_liste',$data);
+            
+            $this->load->view('admin/urunler_liste',$data);
 		
 		
 	}
         public function ekle()
-	{
-            $this->load->view('admin\urunler_ekle');
-		
-		
+	{   
+            $query=$this->db->query("SELECT * FROM kategoriler");
+            $data["veri"]=$query->result();
+            $this->load->view('admin/urunler_ekle',$data);	
 	}
          public function ekle_kaydet()
 	{
 		$data=array(
                     'Ad'=>$this->input->post('Ad'),
-                    'Kodu'=>$this->input->post('Kodu'),
-                    'Turu'=>$this->input->post('Turu'),
+                    'Grubu'=>$this->input->post('Grubu'),
+                    'Fiyat'=>$this->input->post('Turu'),
                     'Kategori'=>$this->input->post('Kategori'),
                     'Stok'=>$this->input->post('Stok'),
-                    'Tarih'=>$this->input->post('Tarih'),
-                    'Resim'=>$this->input->post('Resim'),
+                    'Aciklama'=>$this->input->post('Aciklama1'),
                     'Description'=>$this->input->post('Description'),
                     'Keywords'=>$this->input->post('Keywords')
          );
          $this->db->insert("urunler",$data);
          $this->session->set_flashdata("mesaj","Üye Ekleme Başariyla Gerçekleştirildi..");
-         redirect(base_url().'admin/urunler');
+         redirect(base_url().'Admin/Urunler');
 		
 	}
         
           public function urunler_duzenle($id)
-	{
-		$query=$this->db->query("SELECT * FROM urunler WHERE id=$id");
-                $data["veri"]=$query->result();
-		$this->load->view('admin\urunler_duzenle_form',$data);
+	{       
+              $query_new=$this->db->query("SELECT * FROM kategoriler");
+              $data["veriler"]=$query_new->result();
+		
+                $data["veri"]=$this->Database_Model->get_urun($id);
+		$this->load->view('admin/urunler_duzenle_form',$data);
 		
 	}
          public function guncelle($id)
 	{
 		$data=array(
                     'Ad'=>$this->input->post('Ad'),
-                    'Kodu'=>$this->input->post('Kodu'),
-                    'Turu'=>$this->input->post('Turu'),
+                    'Grubu'=>$this->input->post('Grubu'),
+                    'Fiyat'=>$this->input->post('Turu'),
                     'Kategori'=>$this->input->post('Kategori'),
                     'Stok'=>$this->input->post('Stok'),
-                    'Tarih'=>$this->input->post('Tarih'),
-                    'Resim'=>$this->input->post('Resim'),
+                    'Aciklama'=>$this->input->post('Aciklama'),
                     'Description'=>$this->input->post('Description'),
                     'Keywords'=>$this->input->post('Keywords')
          );
@@ -73,27 +74,27 @@ class Urunler extends CI_Controller {
          $this->Database_Model->update_data("urunler",$data,$id);
          
          $this->session->set_flashdata("mesaj","Başariyla Güncellendi");
-         redirect(base_url().'admin\urunler');
+         redirect(base_url().'Admin/Urunler');
 		
 	}
 	public function urunler_sil($id)
 	{
 		$this->db->query("DELETE FROM urunler WHERE id=$id");
-                redirect(base_url().'admin/urunler');
+                redirect(base_url().'Admin/Urunler');
 		
 		
 	}
          public function resim_yukle($id){
         
              $data["id"]=$id;
-             $this->load->view('admin\urunler_resim_ekle',$data);
+             $this->load->view('admin/urunler_resim_ekle',$data);
 	}
          public function resim_kaydet($id){
                $data["id"]=$id;
                  
                 $config['upload_path']          = './upload/';
                 $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 100;
+                $config['max_size']             = 300;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 1024;
 
@@ -114,7 +115,7 @@ class Urunler extends CI_Controller {
                         );
                         $this->load->model('Database_Model');
                         $this->Database_Model->update_data("urunler",$data,$id);
-                        redirect(base_url().'admin/urunler');
+                        redirect(base_url().'Admin/Urunler');
                         
                 }
         
@@ -131,12 +132,12 @@ class Urunler extends CI_Controller {
          }
         public function galeri_kaydet($id)
          {   
-          $data["id"]=$id;
-          $config['upload_path']          = './upload/';
+                        $data["id"]=$id;
+                        $config['upload_path']          = './upload/';
                         $config['allowed_types']        = 'gif|jpg|png';
-                        $config['max_size']             = 100;
-                        $config['max_width']            = 1024;
-                        $config['max_height']           = 1024;
+                        $config['max_size']             = 300;
+                        $config['max_width']            = 2024;
+                        $config['max_height']           = 2024;
 
                         $this->load->library('upload', $config);
 
@@ -144,8 +145,8 @@ class Urunler extends CI_Controller {
                         {
                                 $error = $this->upload->display_errors();
                                 $this->session->set_flashdata("mesaj","Resim  Yüklenemedi!!".$error);
-                                $this->load->view('admin\urun_galeri_ekle',$data);
-                                redirect(base_url().'admin/urunler/galeri_yukle/'.$id);
+                                $this->load->view('admin/urun_galeri_ekle',$data);
+                                redirect(base_url().'Admin/Urunler/galeri_yukle/'.$id);
                         }
                         else
                         {        
@@ -160,7 +161,7 @@ class Urunler extends CI_Controller {
                                 $this->db->insert("urun_galeri",$data);
                                 $this->session->set_flashdata("mesaj","Resim  Yüklendi");
 
-                                  redirect(base_url().'admin/urunler/galeri_yukle/'.$id);
+                                  redirect(base_url().'Admin/Urunler/galeri_yukle/'.$id);
                         }
                 } 
          public function galeri_sil($id,$resimid)
@@ -169,8 +170,9 @@ class Urunler extends CI_Controller {
 
                     $this->session->set_flashdata("mesaj","Resim Galeriden Silindi");
 
-                    redirect(base_url().'admin/urunler/galeri_yukle/'.$id);
+                    redirect(base_url().'Admin/Urunler/galeri_yukle/'.$id);
                 }
+                 
         
 
 

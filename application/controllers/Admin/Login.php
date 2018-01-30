@@ -7,15 +7,12 @@ class Login extends CI_Controller {
 	{
 				parent :: __construct();
 				$this->load->helper('url');
-                                $this->load->database();
-				
-				
-				
+                                $this->load->database();	
 	}
 	
 	public function index()
 	{
-		$this->load->view('admin\login_form');
+		$this->load->view('admin/login_form');
 		
 	}
 	public function login_ol()
@@ -24,11 +21,11 @@ class Login extends CI_Controller {
 		$email=$this->input->post("email");
 		$sifre=$this->input->post("sifre");
 		
-		 $email=$this->security->xss_clean($email);
-		 $sifre=$this->security->xss_clean($sifre);
+		$email=$this->security->xss_clean($email);
+		$sifre=$this->security->xss_clean($sifre);
 		$this->load->model('Database_Model');
 		
-		$result= $this->Database_Model->login("Admin",$email,$sifre);
+		$result= $this->Database_Model->login("admin",$email,$sifre);
 		
 		if($result)
 		{
@@ -42,7 +39,7 @@ class Login extends CI_Controller {
                     );
                     //session degiskenine atama
                      $this->session->set_userdata("admin_session",$sess_array);
-                     redirect(base_url().'admin/home');        
+                     redirect(base_url().'Admin/Home');        
                   
                         
                     
@@ -51,13 +48,13 @@ class Login extends CI_Controller {
 		else
 		{
 			$this->session->set_flashdata("mesaj","Yanlış kullanıcı adı ya da şifre");
-			redirect(base_url().'admin/login');
+			redirect(base_url().'Admin/Login');
 		}
                 
 	}
         public function login_cik(){
                      $this->session->unset_userdata("admin_session");
-                     redirect(base_url().'admin/login');      
+                     redirect(base_url().'Admin/Login');      
                   
         }
         

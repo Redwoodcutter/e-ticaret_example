@@ -8,7 +8,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
             </div>
-            <!-- /.navbar-header -->
+            <!--/.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
@@ -59,9 +59,9 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-messages -->
+                    <!--/.dropdown-messages -->
                 </li>
-                <!-- /.dropdown -->
+                <!--/.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -138,9 +138,9 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-tasks -->
+                    <!--/.dropdown-tasks -->
                 </li>
-                <!-- /.dropdown -->
+                <!--/.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -198,9 +198,9 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-alerts -->
+                    <!--/.dropdown-alerts -->
                 </li>
-                <!-- /.dropdown -->
+                <!--/.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -214,8 +214,8 @@
                         <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-user -->
+                    <!--/.dropdown-user -->
                 </li>
-                <!-- /.dropdown -->
+                <!--/.dropdown -->
             </ul>
-            <!-- /.navbar-top-links -->
+            <!--/.navbar-top-links -->

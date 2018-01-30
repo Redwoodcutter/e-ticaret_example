@@ -45,14 +45,14 @@
                     <div class="panel-body">
                         <?php if($this->session->flashdata("mesaj")) { ?>
                          <div class="alert alert-info">
-                             <a href="#" class="alert-link">Hata Olustu!!!!!!!!!!!</a>
+                             <a href="#" class="alert-link">Hata Olustu!</a>
                              <br>
                                 <?=$this->session->flashdata("mesaj");?> 
                                 
                             </div>
                         <?php } ?>
                         
-                        <form action="<?php base_url()?>login/login_ol" method="post">
+                        <form action="<?php base_url()?>Login/login_ol" method="post">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="email" name="email" required  type="email" autofocus>

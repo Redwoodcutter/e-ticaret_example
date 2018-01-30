@@ -1,5 +1,6 @@
 <?php
-$this->load->view('admin\_header');
+$this->load->view('admin/_header');
+$this->load->view('admin/_sidebar');
     
 ?>
 
@@ -17,20 +18,20 @@ $this->load->view('admin\_header');
                                 
                             </div>
                         <?php } ?>
-                        <form action="<?=base_url()?>admin/urunler/resim_kaydet/<?=$id?>" method="post" enctype="multipart/form-data">
+                        <form action="<?=base_url()?>Admin/Urunler/resim_kaydet/<?=$id?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                             <label for="exampleInputEmail1">Resim Ekle</label>
                             <input type="file" class="form-control" id="Resim" required name="resim"  >
                           </div>
                           <button type="submit" class="btn btn-primary">Resimi Kaydet</button>
                         </form>
-                    <!-- /.col-lg-12 -->
+                    <!--/.col-lg-12 -->
                 </div>
-                <!-- /.row -->
+                <!--/.row -->
             </div>
-            <!-- /.container-fluid -->
+            <!--/.container-fluid -->
         </div>
 </div>
 <?php
-$this->load->view('admin\_footer');
+$this->load->view('admin/_footer');
 ?>

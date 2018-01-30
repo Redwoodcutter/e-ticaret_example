@@ -10,99 +10,82 @@
                                     </button>
                                 </span>
                             </div>
-                            <!-- /input-group -->
+                            <!--/input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Anasayfa</a>
+                            <a href="<?=base_url()?>Admin/Home"><i class="fa fa-dashboard fa-fw active"></i>Anasayfa</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Blog Yaz<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Bilgisayar</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Telefon</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i>Gelen Bloglar</a>
+                            <a href="<?=base_url()?>Admin/Urunler"><i class="fa fa-bar-chart-o fa-fw"></i>Urunler</a>
+                            <!--/.nav-second-level -->
                         </li>
                         <li>
                             
-                            <a href="<?=base_url()?>admin/uyeler"><i class="fa fa-edit fa-fw"></i>Üyeler</a>
+                            <a href="<?=base_url()?>Admin/Uyeler"><i class="fa fa-edit fa-fw"></i>Üyeler</a>
+                        </li>
+                          <li>
+                            <a href="<?=base_url()?>Admin/Ayarlar"><i class="fa fa-table fa-fw"></i>Ayarlar</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                            
+                            <a href="<?=base_url()?>Admin/Home/kategori"><i class="fa fa-edit fa-fw"></i>Kategori Menusu</a>
+                        </li>
+                      
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Siparişler<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
+                                    <a href="<?=base_url()?>Admin/Siparisler/liste/Yeni">Bekleyenler</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
+                                    <a href="<?=base_url()?>Admin/Siparisler/liste/Onaylandi">Onaylananlar</a>
+                                </li>
+                                 <li>
+                                    <a href="<?=base_url()?>Admin/Siparisler/liste/Iptal">İptal Edilen</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html">Notifications</a>
+                                    <a href="<?=base_url()?>Admin/Siparisler/liste/Kargoda">Kargoda</a>
                                 </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
+                               <li>
+                                    <a href="<?=base_url()?>Admin/Siparisler/liste/Tamamlandi">Tamamlandı</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
+                            <!--/.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Yorumlar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="<?=base_url()?>Admin/Yorumlar/liste/Yeni">Yeni Yorumlar</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="<?=base_url()?>Admin/Yorumlar/liste/Onaylandi">Onaylananlar</a>
                                 </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
+                                 <li>
+                                    <a href="<?=base_url()?>Admin/Yorumlar/liste/Iptal">Silinen Yorumlar</a>
                                 </li>
+                               
                             </ul>
-                            <!-- /.nav-second-level -->
+                            <!--/.nav-second-level -->
                         </li>
-                        <li class="active">
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Bize Ulaşın<span class="fa arrow"></span></a>
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Gelen Kutuları<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="active" href="blank.html">Hakkımızda</a>
+                                    <a  href="<?=base_url()?>Admin/Yorumlar/mesaj_liste/yeni">Üye Mesajlar Yeni</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">İletisim</a>
+                                    <a href="<?=base_url()?>Admin/Yorumlar/mesaj_liste/cevaplandi">Üye Mesajlar Cevaplanan</a>
+                                </li>
+                                   <li>
+                                    <a  href="<?=base_url()?>Admin/Home/bize_yazin">Gelen Kutusu</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
+                            <!--/.nav-second-level -->
                         </li>
                     </ul>
                 </div>
-                <!-- /.sidebar-collapse -->
+                <!--/.sidebar-collapse -->
             </div>
-            <!-- /.navbar-static-side -->
+            <!--/.navbar-static-side -->
         </nav>

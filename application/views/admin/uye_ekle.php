@@ -1,6 +1,6 @@
 <?php
-$this->load->view('admin\_header');
-$this->load->view('admin\_sidebar');
+$this->load->view('admin/_header');
+$this->load->view('admin/_sidebar');
 ?>
 
 <div id="page-wrapper">
@@ -8,7 +8,7 @@ $this->load->view('admin\_sidebar');
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Üye Listesi</h1>
-                        <form action="<?=base_url()?>admin/uyeler/ekle_kaydet" method="POST" >
+                        <form action="<?=base_url()?>Admin/Uyeler/ekle_kaydet" method="POST" >
                             <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
                             <input type="email" class="form-control" id="email"required name="email" aria-describedby="emailHelp">
@@ -31,13 +31,13 @@ $this->load->view('admin\_sidebar');
                           </div>
                           <button type="submit" class="btn btn-primary">Yeni Üye Ekle</button>
                         </form>
-                    <!-- /.col-lg-12 -->
+                    <!--/.col-lg-12 -->
                 </div>
-                <!-- /.row -->
+                <!--/.row -->
             </div>
-            <!-- /.container-fluid -->
+            <!--/.container-fluid -->
         </div>
 </div>
 <?php
-$this->load->view('admin\_footer');
+$this->load->view('admin/_footer');
 ?>

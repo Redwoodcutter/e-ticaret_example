@@ -44,9 +44,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Edmin Panel</a>
+                <a class="navbar-brand" href="index.html">Admin Panel</a>
             </div>
-            <!-- /.navbar-header -->
+            <!--/.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
@@ -97,11 +97,11 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-messages -->
+                    <!--/.dropdown-messages -->
                 </li>
-                <!-- /.dropdown -->
+                <!--/.dropdown -->
                   
-                <!-- /.dropdown -->
+                <!--/.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -159,9 +159,9 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-alerts -->
+                    <!--/.dropdown-alerts -->
                 </li>
-                <!-- /.dropdown -->
+                <!--/.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -172,11 +172,11 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Ayarlar</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="<?php base_url()?>login/login_cik"> <i class="fa fa-sign-out fa-fw"></i>Çıkıs Yap</a>
+                        <li><a href="<?php base_url()?>Login/login_cik"> <i class="fa fa-sign-out fa-fw"></i>Çıkıs Yap</a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-user -->
+                    <!--/.dropdown-user -->
                 </li>
-                <!-- /.dropdown -->
+                <!--/.dropdown -->
             </ul>
-            <!-- /.navbar-top-links -->
+            <!--/.navbar-top-links -->
