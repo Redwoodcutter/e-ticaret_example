@@ -5,7 +5,7 @@
 What is e-ticaret_example
 #################
 
-this code example or code work about to E-Commerce. you can view in there www.oguzkumcular.com
+this code example or code work about to E-Commerce. you can view in there www.oguzkumcular.com/e-commerce
 also you can view to user interface with login 
 E-mail: cevdet@gmail.com 
 password: 1234
